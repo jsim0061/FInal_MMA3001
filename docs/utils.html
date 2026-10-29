@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>utils documentation</title><style>body{font:16px system-ui;margin:3em auto;max-width:850px;line-height:1.5}pre{background:#f4f4f4;padding:1em;white-space:pre-wrap}h2{border-bottom:1px solid #ccc;padding-top:1em}</style><p><a href="index.html">Documentation index</a></p><h1>utils.py</h1><p>Shared model helpers: data validation, metrics, profiling and display.</p><h2 id="chronological_split">chronological_split(df)</h2><pre>Split observations 70/15/15 and drop labels crossing split boundaries.
+
+Args:
+    df (pandas.DataFrame): Chronologically sorted data with target_time.
+Returns:
+    tuple: Train, validation and test DataFrames.</pre><h2 id="load_data">load_data(path)</h2><pre>Load a cleaned 15-minute CSV with the six standard model features.
+
+Args:
+    path (str or Path): Path to the processed occupancy CSV.
+Returns:
+    pandas.DataFrame: Chronologically ordered observations, with UTC target times.
+Raises:
+    ValueError: If required columns are missing or insufficient valid rows exist.</pre><h2 id="model_size_kib">model_size_kib(model)</h2><pre>Return estimated serialised model size in KiB (not its RAM usage).</pre><h2 id="performance_table">performance_table(row)</h2><pre>Display profiling values with consistent units and explicit limitations.</pre><h2 id="profile_call">profile_call(func, *args, **kwargs)</h2><pre>Run func once, returning (result, seconds, peak Python MiB).
+
+Tracing is started fresh for each section; avoid nested calls to this helper.</pre><h2 id="save_evaluations">save_evaluations(name, model, splits, predict, folder, training_profile=None, training_rows=None)</h2><pre>Save train/validation/test scores, measured-only test scores, and test predictions.</pre><h2 id="save_profile">save_profile(folder, name, *, training_s, prediction_s, train_peak_mib, prediction_peak_mib, model_kib=None, n_train=None, n_test=None)</h2><pre>Write a one-row CSV documenting per-model profiling scope and units.</pre><h2 id="scores">scores(y_true, y_pred)</h2><pre>Return MAE, RMSE and R2 for continuous headcount predictions.
+
+Args:
+    y_true (array-like): Sensor or processed target headcounts.
+    y_pred (array-like): Predicted continuous headcounts.
+Returns:
+    dict: MAE and RMSE in occupants; dimensionless R2.</pre><h2 id="scores_table">scores_table(records)</h2><pre>Display MAE, RMSE (people), and R-squared at three decimal places.</pre><h2 id="section">section(title)</h2><pre>Print a readable section heading.</pre><h2 id="table">table(headers, rows, numeric_columns=())</h2><pre>Print an aligned table; accepts preformatted strings or numeric scalars.</pre></html>
