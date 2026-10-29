@@ -1,0 +1,2 @@
+Model,Training_Time_s,Test_Prediction_Time_s,Training_Peak_Python_MiB,Test_Prediction_Peak_Python_MiB,Model_Size_KiB,Training_Rows,Test_Rows
+decision_tree,0.04038437500003056,0.002069917000426358,4.079276084899902,0.8748073577880859,4.7939453125,59199,12686

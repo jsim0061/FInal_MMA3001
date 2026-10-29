@@ -1,0 +1,2 @@
+Model,Training_Time_s,Test_Prediction_Time_s,Training_Peak_Python_MiB,Test_Prediction_Peak_Python_MiB,Model_Size_KiB,Training_Rows,Test_Rows
+svr,67.4744610419998,1.3520569580000483,2.1616287231445312,1.846257209777832,133.6845703125,5000,12686
